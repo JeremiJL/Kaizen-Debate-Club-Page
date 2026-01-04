@@ -9,7 +9,12 @@ class Rules extends Component {
 
     render() {
 
-        return <RulesDocumentsNavigationResponsive></RulesDocumentsNavigationResponsive>
+        return <div>
+            <h1>Rules of debating at Kaizen Debate Club</h1>
+            <RulesDocumentsNavigationResponsive></RulesDocumentsNavigationResponsive>
+        </div>
+
+
 
     }
 

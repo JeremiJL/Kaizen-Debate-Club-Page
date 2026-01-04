@@ -5,23 +5,21 @@ import TextBlock from "../components/TextBlock"
 class Home extends Component {
     render() {
         return <div>
-
-            <figure className="text-center">
-                <blockquote className="blockquote">
-                    <h1>Kaizen Debate Club</h1>
-                </blockquote>
-                <figcaption className="blockquote-footer">
-                    Japanese for "Continuous Improvement"
-                </figcaption>
-            </figure>
-            <TextBlock
-                quoteContent={"”Popularize debate, demonstrate everyone its importance, and teach skills related to it in a fun and engaging way”"}>
-            </TextBlock>
+            <div className="hero">
+                <figure className="text-center">
+                    <blockquote className="blockquote">
+                        <h1>Kaizen Debate Club</h1>
+                    </blockquote>
+                    <figcaption className="blockquote-footer">
+                        Japanese for "Continuous Improvement"
+                    </figcaption>
+                </figure>
+            </div>
             <TextBlock h2Content={"What do we do?"}
                        pContent={" During our meetings, we perform a variety of activities: public speaking workshops, negotiation exercises, members-driven lectures, etc. We also conduct debate sessions from time to time, to keep our skills sharp. And to prevent boredom from setting in, we also like to play speaking games together!"}>
             </TextBlock>
             <TextBlock h2Content={"Why should you join?"}
-                       childContent={<RowSection></RowSection>}>
+                       children={<RowSection></RowSection>}>
             </TextBlock>
 
         </div>

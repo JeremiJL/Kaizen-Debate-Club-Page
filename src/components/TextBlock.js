@@ -1,16 +1,27 @@
-import {Component, React} from "react";
+import React from "react";
 
-class TextBlock extends Component {
-    render() {
-        return <div className="container-flex pt-0">
-            <p className="side-note">{this.props.sideNoteContent}</p>
-            <h2>{this.props.h2Content}</h2>
-            <p>{this.props.pContent}</p>
-            <p className="highlighted-quote">{this.props.quoteContent}</p>
-            <div className="pb-1">{this.props.childContent}</div>
-            <hr></hr>
+const hasContent = (v) => {
+    if (v === null || v === undefined) return false;
+    if (typeof v === "string") return v.trim().length > 0;
+    return true;
+};
+
+export default function TextBlock({
+                                      sideNoteContent,
+                                      h2Content,
+                                      pContent,
+                                      children,
+                                      showDivider = true,
+                                  }) {
+    return (
+        <div className="content-block pt-0">
+            {hasContent(sideNoteContent) && (
+                <p className="side-note">{sideNoteContent}</p>
+            )}
+            {hasContent(h2Content) && <h2>{h2Content}</h2>}
+            {hasContent(pContent) && <p>{pContent}</p>}
+            {hasContent(children) && <div className="pb-1">{children}</div>}
+            {showDivider && <hr />}
         </div>
-    }
+    );
 }
-
-export default TextBlock

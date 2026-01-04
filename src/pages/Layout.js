@@ -13,7 +13,7 @@ const Layout = () => {
         <>
             {isDesktop && <NavigationHeaderDesktop></NavigationHeaderDesktop>}
             {isMobile && <NavigationHeaderMobile></NavigationHeaderMobile>}
-            <main className="d-flex flex-column min-vh-100">
+            <main className="site-main d-flex flex-column min-vh-100">
                 <Outlet />
             </main>
             <Footer></Footer>

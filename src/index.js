@@ -13,6 +13,7 @@ export default function App() {
         <HashRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
                     <Route path="home" element={<Home/>}/>
                     <Route path="joinus" element={<JoinUs/>}/>
                     <Route path="aboutus" element={<AboutUs/>}/>
@@ -24,4 +25,4 @@ export default function App() {
 }
 
 createRoot(document.getElementById("root"))
-.render(React.createElement(App));
+    .render(React.createElement(App));

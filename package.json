@@ -1,6 +1,6 @@
 {
   "name": "kaizen_debate_club",
-  "homepage": ".",
+  "homepage": "#/home",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

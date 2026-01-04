@@ -36,7 +36,7 @@ const CardsRow = () => {
     const membersCardsListSecondRow = [membersCardList[4],membersCardList[5],membersCardList[6]];
 
     return <div>
-        <div className="container-flex row row-cols-4 mt-3 py-2">
+        <div className="row row-cols-4 mt-3 py-2">
             {membersCardsListFirstRow.map((member, index) => (
             <div className="col-sm" key={index}>
                 {member}

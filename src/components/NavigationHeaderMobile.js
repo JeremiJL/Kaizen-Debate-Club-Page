@@ -18,8 +18,9 @@ class NavigationHeaderMobile extends Component {
 
     render() {
 
-        return <header><div className="navbar-collapse">
-                <nav id="header_navbar_mobile" className="navbar navbar-expand-sm bg-dark navbar-dark">
+        return <header>
+            <div className="navbar-collapse">
+                <nav className="navbar navbar-expand-md site-nav">
                     <div className="container-fluid">
 
                         <a className="navbar-brand" id="homeRedirection" href="#/home">Debate Club</a>
@@ -38,7 +39,7 @@ class NavigationHeaderMobile extends Component {
                                     <a className="nav-link" href="#/joinus">Join Us</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#/news">News</a>
+                                    <a className="nav-link mx-2" href="#/aboutus">About us</a>
                                 </li>
                             </ul>
                         </div>
