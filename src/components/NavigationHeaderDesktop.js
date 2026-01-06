@@ -4,8 +4,6 @@ class NavigationHeaderDesktop extends Component {
 
 
     render() {
-
-        console.log()
         return <header>
             <div className="navbar-list">
                 <nav id="header_navbar" className="navbar justify-content-center navbar-expand-sm site-nav">

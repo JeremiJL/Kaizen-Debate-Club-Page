@@ -5,15 +5,30 @@ import TextBlock from "../components/TextBlock"
 class Home extends Component {
     render() {
         return <div>
-            <div className="hero">
-                <figure className="text-center">
-                    <blockquote className="blockquote">
-                        <h1>Kaizen Debate Club</h1>
-                    </blockquote>
-                    <figcaption className="blockquote-footer">
-                        Japanese for "Continuous Improvement"
-                    </figcaption>
-                </figure>
+            <div className="hero hero--video">
+                <video
+                    className="homeBackGroundVideo"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                >
+                    <source src="/videos/loop.mp4" type="video/mp4"/>
+                </video>
+
+                <div className="hero__overlay"/>
+
+                <div className="hero__content">
+                    <figure className="text-center">
+                        <blockquote className="blockquote">
+                            <h1>Kaizen Debate Club</h1>
+                        </blockquote>
+                        <figcaption className="blockquote-footer">
+                            Japanese for "Continuous Improvement"
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
             <TextBlock h2Content={"What do we do?"}
                        pContent={" During our meetings, we perform a variety of activities: public speaking workshops, negotiation exercises, members-driven lectures, etc. We also conduct debate sessions from time to time, to keep our skills sharp. And to prevent boredom from setting in, we also like to play speaking games together!"}>
@@ -21,7 +36,6 @@ class Home extends Component {
             <TextBlock h2Content={"Why should you join?"}
                        children={<RowSection></RowSection>}>
             </TextBlock>
-
         </div>
     }
 }
