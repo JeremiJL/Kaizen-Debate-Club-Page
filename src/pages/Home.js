@@ -14,7 +14,7 @@ class Home extends Component {
                     playsInline
                     preload="auto"
                 >
-                    <source src="/videos/loop.mp4" type="video/mp4"/>
+                    <source src="videos/loop.mp4" type="video/mp4"/>
                 </video>
 
                 <div className="hero__overlay"/>
