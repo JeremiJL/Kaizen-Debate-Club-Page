@@ -1,11 +1,4 @@
-/* =========================
-   Kaizen Debate Club – Glass Night UI (complete stylesheet)
-   Brand red preserved exactly: rgb(220,53,69)
-   ========================= */
-
 :root{
-    --brand: rgb(220,53,69); /* DO NOT CHANGE */
-    --brand-lighter: rgb(220,53,69,.4); /* DO NOT CHANGE */
 
     --bg: #0b0c0f;
     --ink: rgba(255,255,255,.92);
@@ -42,7 +35,6 @@
     --icon-size: clamp(44px, 1.2vw + 16px, 30px);
 }
 
-/* Reset / base */
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
 body{
@@ -69,7 +61,6 @@ footer, h1, h2, header{
     letter-spacing: .07em;
 }
 
-/* Layout */
 main.site-main{
     width: min(var(--maxw), calc(100% - (2 * var(--pad))));
     margin: 92px auto 96px;
@@ -77,14 +68,12 @@ main.site-main{
     line-height: 1.65;
 }
 
-/* Your custom container */
 .container-flex{
     width: 100%;
     max-width: var(--maxw);
     margin-inline: auto;
 }
 
-/* Typography */
 h1{
     font-size: var(--h1);
     line-height: 1.02;
@@ -103,7 +92,6 @@ p{
     color: var(--ink-2);
 }
 
-/* Subtle separators */
 hr{
     border: 0;
     height: 1px;
@@ -111,16 +99,11 @@ hr{
     margin: 18px 0 0;
 }
 
-/* -------------------------
-   Anti-bootstrap feel: override common Bootstrap components
-   ------------------------- */
 
-/* Kill the default container widths and gutters if you rely on your own spacing */
 .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl{
     max-width: var(--maxw);
 }
 
-/* Buttons: avoid default bootstrap look */
 .btn{
     border-radius: 999px !important;
     padding: 10px 16px !important;
@@ -140,7 +123,6 @@ hr{
     background: rgba(255,255,255,.06) !important;
 }
 
-/* Inputs */
 .form-control, .form-select{
     border-radius: 14px !important;
     background: rgba(255,255,255,.06) !important;
@@ -154,10 +136,6 @@ hr{
     outline: none !important;
     box-shadow: 0 0 0 4px rgba(220,53,69,.12) !important;
 }
-
-/* -------------------------
-   Navigation (glass)
-   ------------------------- */
 
 .site-nav{
     position: sticky;
@@ -211,20 +189,17 @@ hr{
 
 @media (max-width: 800px){
 
-    /* keep the animated element stable through all states */
     .site-nav .navbar-collapse{
         padding: 0;
         border: 0;
         will-change: height;
     }
 
-    /* IMPORTANT: same margin in BOTH stages to prevent the “second drop” */
     .site-nav .navbar-collapse.collapsing,
     .site-nav .navbar-collapse.show{
         margin-top: 10px;
     }
 
-    /* spacing belongs to the content, not the collapsing container */
     .site-nav .navbar-nav{
         padding: 10px 0 6px;
         margin: 0;
@@ -234,7 +209,6 @@ hr{
         gap: 6px;
     }
 
-    /* keep links calm inside the expanding panel */
     .site-nav .nav-link{
         width: 100%;
         border-radius: 16px;
@@ -261,11 +235,6 @@ hr{
     object-fit: cover;
     z-index: 0;
 }
-
-
-/* -------------------------
-   Hero (glass, no gradients)
-   ------------------------- */
 
 .hero{
     position: relative;
@@ -297,7 +266,6 @@ hr{
 
 .hero.hero--video{
     position: relative;
-    overflow: hidden;          /* clips the video to rounded corners */
 }
 
 .homeBackGroundVideo{
@@ -305,12 +273,9 @@ hr{
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* fills hero, keeps aspect ratio */
     z-index: 0;
-    transform: scale(1.02);    /* avoids edge gaps from subpixel rounding */
 }
 
-/* dark glass overlay so text stays readable */
 .hero__overlay{
     position: absolute;
     inset: 0;
@@ -320,13 +285,11 @@ hr{
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* content sits above overlay */
 .hero__content{
     position: relative;
     z-index: 2;
 }
 
-/* optional: tighten caption contrast on video */
 .hero--video .blockquote-footer{
     color: rgba(255,255,255,.78);
 }
@@ -340,9 +303,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     letter-spacing: .02em;
 }
 
-/* -------------------------
-   Content blocks (TextBlock wrapper)
-   ------------------------- */
 
 .content-block{
     margin: 20px 0 20px;
@@ -362,9 +322,7 @@ figure.text-center{ margin: 0 0 34px 0; }
     background: rgba(255,255,255,.075);
 }
 
-/* Fix h2 padding / spacing inside content-block */
 .content-block > h2{
-    margin-top: 6px;      /* creates the “top breathing space” */
     margin-bottom: 14px;
 }
 
@@ -393,9 +351,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     -webkit-backdrop-filter: blur(var(--blur));
 }
 
-/* -------------------------
-   Home rows (chips/cards) — keep your structure, modernise the feel
-   ------------------------- */
 
 .row.container-flex{
     margin: 0 0 10px 0;
@@ -423,9 +378,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     font-weight: 700;
 }
 
-/* -------------------------
-   AboutUs cards — interactive, not bootstrap
-   ------------------------- */
 
 .card{
     border-radius: var(--radius) !important;
@@ -478,11 +430,7 @@ figure.text-center{ margin: 0 0 34px 0; }
     font-size: clamp(13px, .5vw + 12px, 15px);
 }
 
-/* -------------------------
-   Rules pagination
-   ------------------------- */
 
-/* Outer wrapper: arrows OUTSIDE the scroll strip */
 .pager{
     display: grid;
     grid-template-columns: 52px 1fr 52px;
@@ -491,7 +439,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     width: 100%;
 }
 
-/* Arrow buttons */
 .pager__arrow{
     width: 52px;
     height: 52px;
@@ -527,7 +474,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     box-shadow: none;
 }
 
-/* Scroll strip (the ul itself) */
 .pagination.pager__strip{
     display: flex;
     align-items: center;
@@ -549,7 +495,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     flex: 0 0 auto;
 }
 
-/* Chips */
 .pagination.pager__strip .page-link{
     align-items: center;
     justify-content: center;
@@ -600,7 +545,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     box-shadow: 0 0 0 4px rgba(220,53,69,.12) !important;
 }
 
-/* Responsive */
 @media (max-width: 560px){
     .pager{
         grid-template-columns: 46px 1fr 46px;
@@ -620,9 +564,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     }
 }
 
-/* -------------------------
-   Footer (glass slab)
-   ------------------------- */
 
 .site-footer{
     margin-top: 48px;
@@ -650,7 +591,6 @@ figure.text-center{ margin: 0 0 34px 0; }
 
 .site-footer .text-danger{ color: var(--brand) !important; }
 
-/* ensures the text is centered directly above the icons */
 .socials-block{
     display: grid;
     justify-items: center;
@@ -667,7 +607,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     font-size: clamp(14px, 0.55vw + 12px, 16px);
 }
 
-/* your existing icon row */
 .social-columns{
     display: grid;
     grid-auto-flow: column;
@@ -677,7 +616,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     justify-content: center;
 }
 
-/* clickable icon “pill” */
 .icon{
     display: inline-flex;
     align-items: center;
@@ -712,7 +650,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     display: block;
 }
 
-/* responsive: on small screens let them wrap nicely */
 @media (max-width: 520px){
     .social-columns{
         grid-auto-flow: row;
@@ -726,9 +663,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     filter: drop-shadow(0 14px 26px rgba(0,0,0,.35));
 }
 
-/* -------------------------
-   Small responsive tuning
-   ------------------------- */
 
 @media (max-width: 800px){
     main.site-main{
@@ -738,9 +672,6 @@ figure.text-center{ margin: 0 0 34px 0; }
     .hero{ padding: 18px; }
 }
 
-/* -------------------------
-   Motion safety
-   ------------------------- */
 
 @media (prefers-reduced-motion: reduce){
     *{ transition: none !important; scroll-behavior: auto !important; }
