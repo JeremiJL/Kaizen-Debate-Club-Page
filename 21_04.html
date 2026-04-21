@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debate Class Presentation | 21.04.2026</title>
+  <link rel="icon" type="image/x-icon" href="./public/images/icons/kaizendebateclub.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+
+  <style>
+/* Inlined from public/styles/stylesheet.css */
+:root{
+    --brand: rgb(220,53,69); /* DO NOT CHANGE */
+    --brand-lighter: rgb(220,53,69,.4); /* DO NOT CHANGE */
+
+    --bg: #0b0c0f;
+    --ink: rgba(255,255,255,.92);
+    --ink-2: rgba(255,255,255,.82);
+    --muted: rgba(255,255,255,.66);
+
+    --glass: rgba(255,255,255,.06);
+    --glass-2: rgba(255,255,255,.085);
+    --glass-3: rgba(255,255,255,.11);
+
+    --hairline: rgba(255,255,255,.12);
+    --hairline-2: rgba(255,255,255,.18);
+
+    --shadow-1: 0 12px 34px rgba(0,0,0,.35);
+    --shadow-2: 0 18px 60px rgba(0,0,0,.55);
+
+    --radius: 20px;
+    --radius-sm: 14px;
+
+    --blur: 16px;
+
+    --ease: cubic-bezier(.2,.8,.2,1);
+    --t1: 140ms;
+    --t2: 240ms;
+    --t3: 520ms;
+
+    --maxw: 1100px;
+    --pad: clamp(18px, 3.6vw, 44px);
+
+    --h1: clamp(34px, 3.1vw, 54px);
+    --h2: clamp(22px, 1.8vw, 30px);
+    --p: clamp(15px, 0.7vw + 12px, 18px);
+
+    --icon-size: clamp(44px, 1.2vw + 16px, 30px);
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+    margin: 0;
+    color: var(--ink);
+    background: var(--bg);
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img{ max-width: 100%; height: auto; display: block; }
+a{ color: inherit; text-decoration: none; }
+a:hover{ color: rgba(255,255,255,.96); }
+
+:focus-visible{
+    outline: 3px solid rgba(220,53,69,.38);
+    outline-offset: 3px;
+    border-radius: 12px;
+}
+
+footer, h1, h2, header{
+    font-family: "Koulen", system-ui, sans-serif;
+    letter-spacing: .07em;
+}
+
+main.site-main{
+    width: min(var(--maxw), calc(100% - (2 * var(--pad))));
+    margin: 92px auto 96px;
+    font-size: var(--p);
+    line-height: 1.65;
+}
+
+.container-flex{
+    width: 100%;
+    max-width: var(--maxw);
+    margin-inline: auto;
+}
+
+h1{
+    font-size: var(--h1);
+    line-height: 1.02;
+    margin: 0 0 22px 0;
+    color: var(--brand);
+    text-shadow: 0 10px 28px rgba(220,53,69,.16);
+}
+h2{
+    font-size: var(--h2);
+    line-height: 1.15;
+    margin: 0 0 14px 0;
+    color: rgba(255,255,255,.94);
+}
+p{
+    margin: 0 0 16px 0;
+    color: var(--ink-2);
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background: rgba(255,255,255,.12);
+    margin: 18px 0 0;
+}
+
+
+.container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl{
+    max-width: var(--maxw);
+}
+
+.btn{
+    border-radius: 999px !important;
+    padding: 10px 16px !important;
+    border: 1px solid var(--hairline) !important;
+    background: rgba(255,255,255,.06) !important;
+    color: rgba(255,255,255,.90) !important;
+    box-shadow: none !important;
+    transition: transform var(--t2) var(--ease), background var(--t2) var(--ease), border-color var(--t2) var(--ease);
+}
+.btn:hover{
+    transform: translateY(-1px);
+    background: rgba(255,255,255,.10) !important;
+    border-color: rgba(220,53,69,.28) !important;
+}
+.btn:active{ transform: translateY(0); }
+.btn-primary, .btn-danger, .btn-outline-primary, .btn-outline-danger{
+    background: rgba(255,255,255,.06) !important;
+}
+
+.form-control, .form-select{
+    border-radius: 14px !important;
+    background: rgba(255,255,255,.06) !important;
+    border: 1px solid var(--hairline) !important;
+    color: rgba(255,255,255,.92) !important;
+    box-shadow: none !important;
+}
+.form-control::placeholder{ color: rgba(255,255,255,.44); }
+.form-control:focus, .form-select:focus{
+    border-color: rgba(220,53,69,.35) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(220,53,69,.12) !important;
+}
+
+.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10,11,14,.55);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: 0 12px 34px rgba(0,0,0,.25);
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+}
+
+.site-nav .navbar-nav{ gap: 6px; }
+
+.site-nav .nav-link{
+    position: relative;
+    padding: 12px 14px !important;
+    border-radius: 999px;
+    letter-spacing: .06em;
+    color: rgba(255,255,255,.78) !important;
+
+    transition:
+            transform var(--t1) var(--ease),
+            background var(--t2) var(--ease),
+            color var(--t2) var(--ease);
+}
+
+.site-nav .nav-link:hover{
+    background: rgba(255,255,255,.07);
+    color: rgba(255,255,255,.96) !important;
+    transform: translateY(-1px);
+}
+
+.site-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 8px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--t2) var(--ease);
+    opacity: .9;
+}
+.site-nav .nav-link:hover::after{ transform: scaleX(1); }
+
+@media (max-width: 800px){
+
+    .site-nav .navbar-collapse{
+        padding: 0;
+        border: 0;
+        will-change: height;
+    }
+
+    .site-nav .navbar-collapse.collapsing,
+    .site-nav .navbar-collapse.show{
+        margin-top: 10px;
+    }
+
+    .site-nav .navbar-nav{
+        padding: 10px 0 6px;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .site-nav .nav-link{
+        width: 100%;
+        border-radius: 16px;
+        padding: 14px 16px !important;
+        margin: 0 !important;
+        transform: none;
+    }
+
+    .site-nav .nav-link:hover{
+        transform: none;
+    }
+
+    .site-nav .nav-link::after{
+        display: none;
+    }
+}
+
+
+.homeBackGroundVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero{
+    position: relative;
+    padding: clamp(18px, 3vw, 34px);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-1);
+
+    backdrop-filter: blur(calc(var(--blur) + 2px));
+    -webkit-backdrop-filter: blur(calc(var(--blur) + 2px));
+
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset: -2px;
+    pointer-events:none;
+    background:
+            radial-gradient(700px 260px at 20% 0%, rgba(220,53,69,.12), transparent 60%),
+            radial-gradient(500px 220px at 85% 10%, rgba(255,255,255,.08), transparent 62%);
+    opacity: .9;
+}
+
+.hero > *{ position: relative; }
+
+.hero.hero--video{
+    position: relative;
+}
+
+.homeBackGroundVideo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero__overlay{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(10,11,14,.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero__content{
+    position: relative;
+    z-index: 2;
+}
+
+.hero--video .blockquote-footer{
+    color: rgba(255,255,255,.78);
+}
+
+figure.text-center{ margin: 0 0 34px 0; }
+
+.blockquote-footer{
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: clamp(12px, 0.5vw + 10px, 14px);
+    letter-spacing: .02em;
+}
+
+
+.content-block{
+    margin: 20px 0 20px;
+    padding: clamp(18px, 2.4vw, 26px);
+    border-radius: var(--radius);
+
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-1);
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    transition: transform var(--t2) var(--ease), box-shadow var(--t2) var(--ease), border-color var(--t2) var(--ease), background var(--t2) var(--ease);
+}
+.content-block:hover{
+    background: rgba(255,255,255,.075);
+}
+
+.content-block > h2{
+    margin-bottom: 14px;
+}
+
+.side-note{
+    margin: 0 0 10px 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: clamp(12px, 0.55vw + 10px, 14px);
+}
+
+.highlighted-quote{
+    margin: 18px 0 14px;
+    padding: clamp(14px, 2.2vw, 22px);
+    border-radius: var(--radius);
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(220,53,69,.26);
+
+    font-style: italic;
+    text-align: center;
+    color: rgba(255,255,255,.90);
+
+    box-shadow: 0 12px 34px rgba(0,0,0,.35);
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+}
+
+
+.row.container-flex{
+    margin: 0 0 10px 0;
+    padding: 14px 14px;
+    border-radius: var(--radius-sm);
+
+    background: var(--brand-lighter);
+    border: 1px solid var(--hairline);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    transition: transform var(--t2) var(--ease), box-shadow var(--t2) var(--ease), border-color var(--t2) var(--ease), background var(--t2) var(--ease);
+}
+.row.container-flex:hover{
+    background: rgba(255,255,255,.075);
+    border-color: var(--muted);
+    box-shadow: 0 18px 44px rgba(0,0,0,.45);
+}
+
+.title-column p{
+    margin: 0;
+    color: rgba(255,255,255,.86);
+    font-weight: 700;
+}
+
+
+.card{
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--hairline) !important;
+    background: rgba(255,255,255,.06) !important;
+    box-shadow: var(--shadow-1) !important;
+
+    overflow: hidden;
+    transform: translateZ(0);
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    transition: transform var(--t2) var(--ease), box-shadow var(--t2) var(--ease), border-color var(--t2) var(--ease), background var(--t2) var(--ease);
+}
+
+.card:hover{
+    transform: translateY(-7px);
+    background: rgba(255,255,255,.075) !important;
+    box-shadow: var(--shadow-2) !important;
+    border-color: rgba(220,53,69,.30) !important;
+}
+
+.card-img-top{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+
+    filter: saturate(1.02) contrast(1.02);
+    transform: scale(1);
+    transition: transform var(--t3) var(--ease);
+}
+.card:hover .card-img-top{ transform: scale(1.04); }
+
+.card-body{ padding: 18px 18px 22px !important; }
+
+.card-title{
+    font-size: clamp(18px, .8vw + 16px, 22px);
+    margin-bottom: 10px;
+    color: rgba(255,255,255,.94);
+}
+
+.card-text ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.card-text li{
+    color: var(--muted);
+    font-size: clamp(13px, .5vw + 12px, 15px);
+}
+
+
+.pager{
+    display: grid;
+    grid-template-columns: 52px 1fr 52px;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.pager__arrow{
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(10,11,14,.55);
+    color: rgba(255,255,255,.90);
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    transition: transform var(--t2) var(--ease), border-color var(--t2) var(--ease), background var(--t2) var(--ease);
+    cursor: pointer;
+}
+
+.pager__arrow:hover{
+    transform: translateY(-2px);
+    border-color: rgba(220,53,69,.30);
+    background: rgba(255,255,255,.07);
+}
+
+.pager__arrow:active{ transform: translateY(0); }
+
+.pager__arrow:disabled{
+    opacity: .45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.pagination.pager__strip{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0;
+    padding: 6px 2px;
+
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+.pagination.pager__strip::-webkit-scrollbar{ display: none; }
+
+.pagination.pager__strip .page-item{
+    flex: 0 0 auto;
+}
+
+.pagination.pager__strip .page-link{
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 12px 16px;
+
+    width: clamp(120px, 14vw, 190px);
+    max-width: 190px;
+
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    border-radius: 999px !important;
+    border: 1px solid var(--hairline) !important;
+    background: rgba(255,255,255,.06) !important;
+    color: rgba(255,255,255,.86) !important;
+
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    transition:
+            transform var(--t2) var(--ease),
+            box-shadow var(--t2) var(--ease),
+            border-color var(--t2) var(--ease),
+            background var(--t2) var(--ease);
+
+    cursor: pointer;
+}
+
+.pagination.pager__strip .page-link:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.075) !important;
+    border-color: rgba(220,53,69,.30) !important;
+    box-shadow: 0 18px 44px rgba(0,0,0,.45);
+}
+
+.pagination.pager__strip .page-link.is-active{
+    border-color: rgba(220,53,69,.38) !important;
+    background: rgba(255,255,255,.085) !important;
+    box-shadow: 0 0 0 4px rgba(220,53,69,.12) !important;
+}
+
+@media (max-width: 560px){
+    .pager{
+        grid-template-columns: 46px 1fr 46px;
+        gap: 10px;
+    }
+
+    .pager__arrow{
+        width: 46px;
+        height: 46px;
+    }
+
+    .pagination.pager__strip .page-link{
+        width: clamp(108px, 36vw, 168px);
+        max-width: 168px;
+        min-height: 48px;
+        padding: 10px 14px;
+    }
+}
+
+
+.site-footer{
+    margin-top: 48px;
+    padding: 18px 0;
+    color: rgba(255,255,255,.92);
+
+    background: rgba(10,11,14,.78);
+    border-top: 1px solid rgba(255,255,255,.10);
+
+    backdrop-filter: blur(calc(var(--blur) + 2px));
+    -webkit-backdrop-filter: blur(calc(var(--blur) + 2px));
+}
+
+.site-footer .nav-link{
+    color: rgba(255,255,255,.82) !important;
+    padding: 10px 12px;
+    border-radius: 999px;
+    transition: background var(--t2) var(--ease), transform var(--t1) var(--ease), color var(--t2) var(--ease);
+}
+.site-footer .nav-link:hover{
+    background: rgba(255,255,255,.07);
+    transform: translateY(-1px);
+    color: rgba(255,255,255,.96) !important;
+}
+
+.site-footer .text-danger{ color: var(--brand) !important; }
+
+.socials-block{
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 12px;
+    text-align: center;
+}
+
+.socials-title{
+    margin: 0;
+    color: rgba(255,255,255,.82);
+    letter-spacing: .02em;
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-size: clamp(14px, 0.55vw + 12px, 16px);
+}
+
+.social-columns{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition: transform 240ms cubic-bezier(.2,.8,.2,1),
+    background 240ms cubic-bezier(.2,.8,.2,1),
+    border-color 240ms cubic-bezier(.2,.8,.2,1);
+}
+
+.icon:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.085);
+    border-color: rgba(220,53,69,.28);
+}
+
+.icon:active{
+    transform: translateY(0);
+}
+
+.icon img,
+.icon svg{
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+@media (max-width: 520px){
+    .social-columns{
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+    }
+}
+
+
+#pjait_logo{
+    filter: drop-shadow(0 14px 26px rgba(0,0,0,.35));
+}
+
+
+@media (max-width: 800px){
+    main.site-main{
+        width: calc(100% - 28px);
+        margin: 86px auto 86px;
+    }
+    .hero{ padding: 18px; }
+}
+
+
+@media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; scroll-behavior: auto !important; }
+}
+    body.presentation-body {
+      min-height: 100vh;
+      background:
+        radial-gradient(760px 340px at 12% 0%, rgba(220, 53, 69, 0.15), transparent 58%),
+        radial-gradient(620px 300px at 88% 10%, rgba(255, 255, 255, 0.07), transparent 64%),
+        var(--bg);
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .presentation-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-shell {
+      width: min(1260px, calc(100% - (2 * var(--pad))));
+      margin: 0 auto;
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-lockup:hover {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      padding: 10px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--hairline);
+      box-shadow: var(--shadow-1);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      flex-shrink: 0;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .brand-copy strong {
+      font-family: "Koulen", system-ui, sans-serif;
+      letter-spacing: 0.07em;
+      font-size: clamp(22px, 1.4vw, 28px);
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-link-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--hairline);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.82);
+      letter-spacing: 0.05em;
+      transition:
+        transform var(--t1) var(--ease),
+        background var(--t2) var(--ease),
+        border-color var(--t2) var(--ease),
+        color var(--t2) var(--ease);
+    }
+
+    .nav-link-chip:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(220, 53, 69, 0.28);
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    main.site-main.presentation-main {
+      width: min(1260px, calc(100% - (2 * var(--pad))));
+      margin: 24px auto 36px;
+      display: grid;
+      gap: 24px;
+    }
+
+    .meeting-hero {
+      min-height: 300px;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(22px, 4vw, 42px);
+    }
+
+    .meeting-hero .hero__content {
+      display: grid;
+      gap: 18px;
+      max-width: 820px;
+    }
+
+    .hero-kicker {
+      margin: 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .meeting-summary {
+      max-width: 68ch;
+      margin: 0;
+    }
+
+    .meeting-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-pill,
+    .slide-format,
+    .panel-kicker,
+    .keyword {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(220, 53, 69, 0.24);
+      background: rgba(220, 53, 69, 0.14);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.88rem;
+      line-height: 1.2;
+    }
+
+    .presentation-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.92fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .presentation-panel {
+      margin: 0;
+    }
+
+    .panel-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .panel-heading h2 {
+      margin-bottom: 0;
+    }
+
+    .panel-heading .side-note {
+      margin: 0 0 8px 0;
+      text-align: left;
+    }
+
+    .panel-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .panel-actions .btn {
+      white-space: nowrap;
+    }
+
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .slide-counter {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .slide-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      padding: clamp(22px, 3vw, 34px);
+      border-radius: var(--radius);
+      border: 1px solid var(--hairline);
+      background:
+        radial-gradient(560px 220px at 0% 0%, rgba(220, 53, 69, 0.16), transparent 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+      box-shadow: var(--shadow-1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(220, 53, 69, 0), rgba(220, 53, 69, 0.65), rgba(220, 53, 69, 0));
+    }
+
+    .slide-title {
+      margin-bottom: 16px;
+      color: var(--brand);
+      font-family: "Koulen", system-ui, sans-serif;
+      font-size: 1.02rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .motion {
+      margin: 0 0 18px 0;
+      font-size: clamp(2rem, 3vw, 3.3rem);
+      line-height: 1.06;
+      color: rgba(255, 255, 255, 0.96);
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+
+    .slide-desc {
+      margin: 0;
+      max-width: 66ch;
+      color: var(--ink-2);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .pager {
+      margin-top: 18px;
+    }
+
+    .pagination.pager__strip {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pagination.pager__strip .page-link {
+      border: 0;
+      font: inherit;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 24px;
+    }
+
+    .timer-display {
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--hairline);
+      background:
+        radial-gradient(480px 180px at 100% 0%, rgba(220, 53, 69, 0.14), transparent 58%),
+        rgba(255, 255, 255, 0.04);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .mode-label {
+      margin-bottom: 6px;
+      font-family: "Koulen", system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--brand);
+      font-size: 0.92rem;
+    }
+
+    .clock {
+      margin: 0;
+      font-size: clamp(2.7rem, 5vw, 4.2rem);
+      line-height: 1;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer-status {
+      margin-top: 10px;
+      color: var(--muted);
+      min-height: 1.4em;
+    }
+
+    .progress-shell {
+      width: 100%;
+      height: 12px;
+      margin-top: 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(220, 53, 69, 0.9), rgba(255, 255, 255, 0.9));
+      transition: width var(--t2) var(--ease);
+    }
+
+    .timer-controls,
+    .preset-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn-brand {
+      background: rgba(220, 53, 69, 0.16) !important;
+      border-color: rgba(220, 53, 69, 0.28) !important;
+    }
+
+    .btn-brand:hover {
+      background: rgba(220, 53, 69, 0.22) !important;
+    }
+
+    .custom-time {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .custom-time .btn {
+      white-space: nowrap;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .notes-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .notes-list li,
+    .mini-item {
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--hairline);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 0.98rem;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .presentation-footer {
+      margin-top: 0;
+    }
+
+    .footer-shell {
+      width: min(1260px, calc(100% - (2 * var(--pad))));
+      margin: 0 auto;
+      padding: 6px 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .pjait-link {
+      display: inline-flex;
+      justify-self: center;
+    }
+
+    .footer-socials {
+      display: grid;
+      justify-items: end;
+      gap: 10px;
+    }
+
+    @media (max-width: 1040px) {
+      .presentation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .motion {
+        max-width: none;
+      }
+
+      .footer-shell {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .footer-socials {
+        justify-items: center;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-shell {
+        width: calc(100% - 28px);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      main.site-main.presentation-main {
+        width: calc(100% - 28px);
+        margin: 24px auto 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .meeting-hero {
+        min-height: 260px;
+      }
+
+      .motion {
+        font-size: clamp(1.7rem, 8vw, 2.4rem);
+      }
+
+      .timer-controls,
+      .preset-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .custom-time {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="presentation-body">
+  <header class="site-nav presentation-nav">
+    <div class="nav-shell">
+      <a class="brand-lockup" href="#overview">
+        <span class="brand-mark">
+          <img src="./public/images/icons/logo.png" alt="Kaizen Debate Club logo" />
+        </span>
+        <span class="brand-copy">
+          <strong>Kaizen Debate Club</strong>
+          <span>One-page class deck for the 21 April 2026 meeting</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Presentation sections">
+        <a class="nav-link-chip" href="#overview">Overview</a>
+        <a class="nav-link-chip" href="#slides">Slides</a>
+        <a class="nav-link-chip" href="#timer">Timer</a>
+        <a class="nav-link-chip" href="#notes">Notes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main presentation-main">
+    <section class="hero hero--video meeting-hero" id="overview">
+      <video
+        class="homeBackGroundVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="./public/videos/loop.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <p class="hero-kicker">Kaizen Debate Club | 21 April 2026</p>
+        <div>
+          <h1>Policy Debating on a Higher Level</h1>
+          <p class="meeting-summary">
+            Tonight's class moves beyond standard policy templates. The room will build a reusable policy
+            structure together, stress-test it in warm-ups, and then apply it to a university-reform clash.
+          </p>
+        </div>
+
+        <div class="meeting-meta">
+          <span class="meta-pill">Policy workshop</span>
+          <span class="meta-pill">2 warm-up motions</span>
+          <span class="meta-pill">1 main senate debate</span>
+          <span class="meta-pill">Integrated debate timer</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="presentation-grid">
+      <section class="content-block presentation-panel" id="slides">
+        <div class="panel-heading">
+          <div>
+            <p class="side-note">Interactive session deck</p>
+            <h2>Meeting Slides</h2>
+          </div>
+
+          <div class="panel-actions">
+            <button class="btn" type="button" onclick="toggleFullscreen()">Toggle fullscreen</button>
+          </div>
+        </div>
+
+        <div class="slide-header">
+          <span class="slide-format" id="formatBadge">Format: Workshop</span>
+          <span class="slide-counter" id="slideCounter">Slide 1 of 5</span>
+        </div>
+
+        <article class="slide-card">
+          <div class="slide-title" id="slideTitle">Session Theme</div>
+          <h3 class="motion" id="motionText"></h3>
+          <p class="slide-desc" id="motionDesc"></p>
+          <div class="keywords" id="keywords"></div>
+        </article>
+
+        <div class="pager">
+          <button class="pager__arrow" type="button" onclick="prevSlide()" aria-label="Previous slide">&#8249;</button>
+          <ul class="pagination pager__strip" id="slidePager" aria-label="Slide navigation"></ul>
+          <button class="pager__arrow" type="button" onclick="nextSlide()" aria-label="Next slide">&#8250;</button>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="content-block presentation-panel" id="timer">
+          <div class="panel-heading">
+            <div>
+              <p class="side-note">Room management</p>
+              <h2>Debate Stopwatch</h2>
+            </div>
+            <span class="panel-kicker">Flexible clock</span>
+          </div>
+
+          <p>
+            Use the same timer for drafting policies, speeches, clashes, and quick procedural intervals. Pick a
+            preset or arm a custom countdown.
+          </p>
+
+          <div class="timer-display">
+            <div class="mode-label" id="timerMode">Stopwatch mode</div>
+            <p class="clock" id="clock">00:00</p>
+            <div class="timer-status" id="timerStatus">Ready to sketch the first policy.</div>
+            <div class="progress-shell">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+          </div>
+
+          <div class="timer-controls">
+            <button class="btn btn-brand" type="button" onclick="startTimer()">Start</button>
+            <button class="btn" type="button" onclick="pauseTimer()">Pause</button>
+            <button class="btn" type="button" onclick="resumeTimer()">Resume</button>
+            <button class="btn" type="button" onclick="resetTimer()">Reset</button>
+          </div>
+
+          <div class="preset-buttons">
+            <button class="btn" type="button" onclick="setPreset(60)">1 minute</button>
+            <button class="btn" type="button" onclick="setPreset(180)">3 minutes</button>
+            <button class="btn" type="button" onclick="setPreset(300)">5 minutes</button>
+            <button class="btn" type="button" onclick="setStopwatch()">Stopwatch</button>
+          </div>
+
+          <div class="custom-time">
+            <input
+              class="form-control"
+              id="customMinutes"
+              type="number"
+              min="1"
+              step="1"
+              placeholder="Custom minutes"
+            />
+            <button class="btn btn-brand" type="button" onclick="applyCustomMinutes()">Set</button>
+          </div>
+
+          <div class="footer-note">
+            Keyboard shortcuts: right arrow and left arrow for slides, space to start or pause the timer, and R to
+            reset it.
+          </div>
+        </section>
+
+        <section class="content-block presentation-panel" id="notes">
+          <div class="panel-heading">
+            <div>
+              <p class="side-note">Facilitator cues</p>
+              <h2>Room Notes</h2>
+            </div>
+            <span class="panel-kicker">Workshop prompts</span>
+          </div>
+
+          <p>
+            Keep the conversation concrete. The aim is not just to brainstorm policies, but to build models that
+            survive hard scrutiny.
+          </p>
+
+          <ul class="notes-list">
+            <li>Start by agreeing on the minimum parts of a solid policy: problem diagnosis, mechanism, incentives, implementation, and likely side effects.</li>
+            <li>After each draft policy, assign one speaker to red-team it for loopholes, bad incentives, hidden costs, and enforceability problems.</li>
+            <li>For the religion motion, press on legitimacy, social function, pluralism, and whether meaning can be deliberately engineered.</li>
+            <li>For the birth-rate motion, demand clarity on root causes, coercion risks, time horizon, and why the chosen intervention beats alternatives.</li>
+            <li>For the university-senate motion, force specificity on curriculum design, employability, governance, and what is lost by merging the tracks.</li>
+          </ul>
+
+          <div class="mini-list">
+            <div class="mini-item">
+              <strong>Policy Workshop</strong>
+              <span>Co-design the format first, then test whether the policy actually survives principled attack.</span>
+            </div>
+            <div class="mini-item">
+              <strong>Main Senate Clash</strong>
+              <span>Teams should produce concrete curriculum models rather than hiding behind abstract claims about innovation or practicality.</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer presentation-footer">
+    <div class="footer-shell">
+      <a class="brand-lockup" href="#overview">
+        <span class="brand-mark">
+          <img src="./public/images/icons/logo.png" alt="Kaizen Debate Club logo" />
+        </span>
+        <span class="brand-copy">
+          <strong>Kaizen Debate Club</strong>
+          <span>Continuous improvement through debate and public speaking.</span>
+        </span>
+      </a>
+
+      <a
+        class="pjait-link"
+        href="https://pja.edu.pl/en/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          id="pjait_logo"
+          src="./public/images/icons/logo-pjatk-white-text.png"
+          width="108"
+          height="56"
+          alt="Polish-Japanese Academy of Information Technology"
+        />
+      </a>
+
+      <div class="footer-socials">
+        <p class="socials-title">Follow our socials to stay up to date!</p>
+        <div class="social-columns">
+          <a class="icon" href="https://www.instagram.com/kaizendebateclub/" target="_blank" rel="noreferrer">
+            <img src="./public/images/icons/instagram_logo_colorfull.svg" alt="Instagram" />
+          </a>
+          <a class="icon" href="https://t.me/+eCriPG7oRrxjN2Uy" target="_blank" rel="noreferrer">
+            <img src="./public/images/icons/telegram_logo_colorfull.svg" alt="Telegram" />
+          </a>
+          <a class="icon" href="https://www.linkedin.com/company/kaizen-debate-club" target="_blank" rel="noreferrer">
+            <img src="./public/images/icons/linkedin_logo_colorfull.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const slides = [
+      {
+        format: "Workshop",
+        title: "Session Theme",
+        motion: "Policy Debating on a Higher Level",
+        desc: "The goal is to generalize policy knowledge beyond standard templates. First the room builds a reusable policy structure together, then speakers apply it to less familiar institutional questions.",
+        keywords: ["policy design", "frameworks", "institutional thinking", "trade-offs", "structure"]
+      },
+      {
+        format: "Warm-up",
+        title: "Exercise",
+        motion: "Build a Policy, Then Stress-Test It",
+        desc: "Start with a problem that clearly requires policy. Develop a shared structure for what a proper policy must contain, let one speaker propose a model, and then let another speaker attack its soundness.",
+        keywords: ["problem analysis", "mechanism", "implementation", "red-team", "soundness"]
+      },
+      {
+        format: "Warm-up Motion I",
+        title: "Motion I",
+        motion: "This House Believes That, as Christianity declines among young people, a new alternative religion should be proposed to help believers navigate the world.",
+        desc: "This pushes the room into questions of social need, legitimacy, community-building, and whether institutions can deliberately manufacture meaning without becoming manipulative or hollow.",
+        keywords: ["religion", "meaning", "social cohesion", "legitimacy", "institution design"]
+      },
+      {
+        format: "Warm-up Motion II",
+        title: "Motion II",
+        motion: "This House Believes That declining birth rates should be addressed with government policy.",
+        desc: "A practical policy test case with clashes over demographic decline, labor markets, fiscal sustainability, family autonomy, and whether governments can fix the causes rather than merely the symptoms.",
+        keywords: ["demographics", "family policy", "state intervention", "incentives", "long-term planning"]
+      },
+      {
+        format: "Main Debate",
+        title: "Final Motion",
+        motion: "This House, as the University Senate, Would merge the courses for IT and Management students into one and rewrite the curriculum from scratch.",
+        desc: "The clash sits on the back of a changing tech industry in which programmers write less code and take on more product-owner responsibilities. Teams should defend concrete models for curriculum, governance, and graduate outcomes.",
+        keywords: ["higher education", "curriculum reform", "IT industry", "management", "employability"]
+      }
+    ];
+
+    let currentSlide = 0;
+
+    function renderPager() {
+      const pager = document.getElementById("slidePager");
+      pager.innerHTML = "";
+
+      slides.forEach((slide, index) => {
+        const item = document.createElement("li");
+        item.className = "page-item";
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "page-link";
+        if (index === currentSlide) {
+          button.classList.add("is-active");
+        }
+        button.textContent = slide.title;
+        button.setAttribute("aria-label", `Go to ${slide.title}`);
+        button.addEventListener("click", () => goToSlide(index));
+
+        item.appendChild(button);
+        pager.appendChild(item);
+      });
+    }
+
+    function renderSlide() {
+      const slide = slides[currentSlide];
+      document.getElementById("formatBadge").textContent = `Format: ${slide.format}`;
+      document.getElementById("slideCounter").textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+      document.getElementById("slideTitle").textContent = slide.title;
+      document.getElementById("motionText").textContent = slide.motion;
+      document.getElementById("motionDesc").textContent = slide.desc;
+
+      const keywords = document.getElementById("keywords");
+      keywords.innerHTML = "";
+      slide.keywords.forEach((word) => {
+        const tag = document.createElement("span");
+        tag.className = "keyword";
+        tag.textContent = word;
+        keywords.appendChild(tag);
+      });
+
+      renderPager();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      renderSlide();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      renderSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      renderSlide();
+    }
+
+    async function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    }
+
+    let timerInterval = null;
+    let duration = null;
+    let remaining = 0;
+    let stopwatchElapsed = 0;
+    let mode = "stopwatch";
+    let running = false;
+
+    function formatTime(totalSeconds) {
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    }
+
+    function updateTimerUI() {
+      const clock = document.getElementById("clock");
+      const timerMode = document.getElementById("timerMode");
+      const timerStatus = document.getElementById("timerStatus");
+      const progressBar = document.getElementById("progressBar");
+
+      if (mode === "countdown") {
+        clock.textContent = formatTime(remaining);
+        timerMode.textContent = "Countdown mode";
+
+        if (duration && duration > 0) {
+          const progress = ((duration - remaining) / duration) * 100;
+          progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+        } else {
+          progressBar.style.width = "0%";
+        }
+
+        if (!running && remaining === duration) {
+          timerStatus.textContent = "Countdown armed and waiting.";
+        } else if (!running && remaining > 0) {
+          timerStatus.textContent = "Countdown paused.";
+        } else if (remaining === 0 && !running) {
+          timerStatus.textContent = "Time has expired.";
+        } else {
+          timerStatus.textContent = "The clock is running.";
+        }
+      } else {
+        clock.textContent = formatTime(stopwatchElapsed);
+        timerMode.textContent = "Stopwatch mode";
+        timerStatus.textContent = running ? "The clock is running." : "Ready to sketch the first policy.";
+        progressBar.style.width = "0%";
+      }
+    }
+
+    function tick() {
+      if (mode === "countdown") {
+        if (remaining > 0) {
+          remaining -= 1;
+          updateTimerUI();
+        } else {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          running = false;
+          updateTimerUI();
+
+          try {
+            const bell = new AudioContext();
+            const oscillator = bell.createOscillator();
+            const gainNode = bell.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(bell.destination);
+            oscillator.type = "sine";
+            oscillator.frequency.value = 880;
+            gainNode.gain.setValueAtTime(0.12, bell.currentTime);
+            oscillator.start();
+            oscillator.stop(bell.currentTime + 0.35);
+          } catch (error) {
+          }
+        }
+      } else {
+        stopwatchElapsed += 1;
+        updateTimerUI();
+      }
+    }
+
+    function clearTimerInterval() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function startTimer() {
+      clearTimerInterval();
+      if (mode === "countdown" && remaining <= 0 && duration) {
+        remaining = duration;
+      }
+      running = true;
+      timerInterval = setInterval(tick, 1000);
+      updateTimerUI();
+    }
+
+    function pauseTimer() {
+      clearTimerInterval();
+      running = false;
+      updateTimerUI();
+    }
+
+    function resumeTimer() {
+      if (running) return;
+      if (mode === "countdown" && remaining <= 0 && duration === 0) return;
+      running = true;
+      clearTimerInterval();
+      timerInterval = setInterval(tick, 1000);
+      updateTimerUI();
+    }
+
+    function resetTimer() {
+      clearTimerInterval();
+      running = false;
+      if (mode === "countdown") {
+        remaining = duration || 0;
+      } else {
+        stopwatchElapsed = 0;
+      }
+      updateTimerUI();
+    }
+
+    function setPreset(seconds) {
+      clearTimerInterval();
+      running = false;
+      mode = "countdown";
+      duration = seconds;
+      remaining = seconds;
+      updateTimerUI();
+    }
+
+    function setStopwatch() {
+      clearTimerInterval();
+      running = false;
+      mode = "stopwatch";
+      duration = null;
+      remaining = 0;
+      stopwatchElapsed = 0;
+      updateTimerUI();
+    }
+
+    function applyCustomMinutes() {
+      const input = document.getElementById("customMinutes");
+      const minutes = Number(input.value);
+      if (!Number.isFinite(minutes) || minutes <= 0) {
+        alert("Please enter a valid number of minutes.");
+        return;
+      }
+      setPreset(Math.round(minutes * 60));
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.target.tagName === "INPUT") return;
+
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      } else if (event.key === "ArrowLeft") {
+        prevSlide();
+      } else if (event.code === "Space") {
+        event.preventDefault();
+        if (running) {
+          pauseTimer();
+        } else {
+          startTimer();
+        }
+      } else if (event.key.toLowerCase() === "r") {
+        resetTimer();
+      }
+    });
+
+    renderSlide();
+    updateTimerUI();
+  </script>
+</body>
+</html>

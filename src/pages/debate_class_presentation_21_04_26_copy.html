@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debate Class Presentation | 21.04.2026</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #d4af37;
+      --accent-2: #60a5fa;
+      --danger: #f87171;
+      --good: #34d399;
+      --shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,0.14), transparent 26%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 22%),
+        linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .app {
+      width: min(1280px, 100%);
+      display: grid;
+      grid-template-columns: 1.45fr 0.75fr;
+      gap: 24px;
+    }
+
+    .panel {
+      background: rgba(17, 24, 39, 0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .slides-panel {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero {
+      padding: 34px 38px 20px 38px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(96,165,250,0.08));
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 3.3rem);
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 14px 0 0 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 75ch;
+    }
+
+    .slide-wrap {
+      padding: 28px 34px 18px 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .slide-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.92rem;
+    }
+
+    .slide-counter {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .slide-card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 26px;
+      padding: 32px;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .slide-title {
+      color: var(--accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .motion {
+      font-size: clamp(2rem, 3.1vw, 3.7rem);
+      line-height: 1.13;
+      margin: 0 0 18px 0;
+      max-width: 16ch;
+      font-weight: 700;
+    }
+
+    .slide-desc {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .keyword {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.22);
+      color: #dbeafe;
+      font-size: 0.9rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 12px;
+      padding: 0 34px 30px 34px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      border-radius: 14px;
+      font-family: inherit;
+      transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(0); }
+
+    .nav button, .timer-controls button, .preset-buttons button {
+      background: #1e293b;
+      color: var(--text);
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.96rem;
+    }
+
+    .nav button.primary, .timer-controls button.primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    }
+
+    .nav button.secondary {
+      background: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(212,175,55,0.12));
+      border: 1px solid rgba(212,175,55,0.28);
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .timer-panel, .notes-panel {
+      padding: 24px;
+    }
+
+    .section-title {
+      margin: 0 0 10px 0;
+      font-size: 1.45rem;
+    }
+
+    .section-subtitle {
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .timer-display {
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .mode-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-size: 0.78rem;
+      margin-bottom: 8px;
+    }
+
+    .clock {
+      font-variant-numeric: tabular-nums;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .timer-status {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      min-height: 1.3em;
+    }
+
+    .progress-shell {
+      width: 100%;
+      height: 12px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #60a5fa, #d4af37);
+      transition: width 0.35s ease;
+    }
+
+    .timer-controls, .preset-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .preset-buttons {
+      margin-top: 14px;
+    }
+
+    .timer-controls .danger {
+      background: linear-gradient(135deg, #b91c1c, #991b1b);
+    }
+
+    .timer-controls .good {
+      background: linear-gradient(135deg, #047857, #065f46);
+    }
+
+    .custom-time {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      background: #0f172a;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .notes-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .notes-panel li + li {
+      margin-top: 10px;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 14px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-item {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1040px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .slides-panel {
+        min-height: auto;
+      }
+
+      .slide-card {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px;
+      }
+
+      .hero, .slide-wrap, .nav, .timer-panel, .notes-panel {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .slide-card {
+        padding: 22px;
+      }
+
+      .motion {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <section class="panel slides-panel">
+      <div class="hero">
+        <div class="eyebrow">Kaizen Debate Club • 21 April 2026</div>
+        <h1>Policy Debating on a Higher Level</h1>
+        <p>
+          Tonight's class moves beyond standard policy templates. The room will build a reusable policy structure,
+          stress-test it in warm-ups, and then apply it to a university-reform clash.
+        </p>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">
+          <span class="badge" id="formatBadge">Format: Workshop</span>
+          <span class="slide-counter" id="slideCounter">Slide 1 of 5</span>
+        </div>
+
+        <div class="slide-card">
+          <div class="slide-title" id="slideTitle">Motion</div>
+          <h2 class="motion" id="motionText"></h2>
+          <div class="slide-desc" id="motionDesc"></div>
+          <div class="keywords" id="keywords"></div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <button onclick="prevSlide()">Previous</button>
+        <button class="primary" onclick="nextSlide()">Next</button>
+        <button class="secondary" onclick="toggleFullscreen()">Toggle fullscreen</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <section class="panel timer-panel">
+        <h3 class="section-title">Debate stopwatch</h3>
+        <p class="section-subtitle">
+          A flexible timer for design rounds, speeches, clashes, and quick procedural intervals.
+          Pick a preset or set your own duration.
+        </p>
+
+        <div class="timer-display">
+          <div class="mode-label" id="timerMode">Stopwatch mode</div>
+          <p class="clock" id="clock">00:00</p>
+          <div class="timer-status" id="timerStatus">Ready to sketch the first policy.</div>
+          <div class="progress-shell">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button class="primary" onclick="startTimer()">Start</button>
+          <button class="good" onclick="pauseTimer()">Pause</button>
+          <button onclick="resumeTimer()">Resume</button>
+          <button class="danger" onclick="resetTimer()">Reset</button>
+        </div>
+
+        <div class="preset-buttons">
+          <button onclick="setPreset(60)">1 minute</button>
+          <button onclick="setPreset(180)">3 minutes</button>
+          <button onclick="setPreset(300)">5 minutes</button>
+          <button onclick="setStopwatch()">Stopwatch</button>
+        </div>
+
+        <div class="custom-time">
+          <input id="customMinutes" type="number" min="1" step="1" placeholder="Custom minutes" />
+          <button onclick="applyCustomMinutes()">Set</button>
+        </div>
+
+        <div class="footer-note">
+          Keyboard shortcuts: right arrow / left arrow for slides, space to start or pause the timer, and R to reset it.
+        </div>
+      </section>
+
+      <section class="panel notes-panel">
+        <h3 class="section-title">Facilitator notes</h3>
+        <p class="section-subtitle">
+          Compact prompts for building the policy framework and keeping the clashes concrete.
+        </p>
+
+        <ul>
+          <li>Start by agreeing on the minimum parts of a solid policy: problem diagnosis, mechanism, incentives, implementation, and likely side effects.</li>
+          <li>After each draft policy, assign one speaker to red-team it for loopholes, bad incentives, hidden costs, and enforceability problems.</li>
+          <li>For the religion motion, press on legitimacy, social function, pluralism, and whether meaning can be deliberately engineered.</li>
+          <li>For the birth-rate motion, demand clarity on root causes, coercion risks, time horizon, and why the chosen intervention beats alternatives.</li>
+          <li>For the university-senate motion, force specificity on curriculum design, employability, governance, and what is lost by merging the tracks.</li>
+        </ul>
+
+        <div class="mini-list">
+          <div class="mini-item">
+            <strong>Policy Workshop</strong>
+            <span>Co-design the format first, then test whether the policy actually survives principled attack.</span>
+          </div>
+          <div class="mini-item">
+            <strong>Main Senate Clash</strong>
+            <span>Teams should produce concrete curriculum models rather than hiding behind abstract claims about innovation or practicality.</span>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <script>
+    const slides = [
+      {
+        format: "Workshop",
+        title: "Session Theme",
+        motion: "Policy Debating on a Higher Level",
+        desc: "The goal is to generalize policy knowledge beyond standard templates. First the room builds a reusable policy structure together, then speakers apply it to less familiar institutional questions.",
+        keywords: ["policy design", "frameworks", "institutional thinking", "trade-offs", "structure"]
+      },
+      {
+        format: "Warm-up",
+        title: "Exercise",
+        motion: "Build a Policy, Then Stress-Test It",
+        desc: "Start with a problem that clearly requires policy. Develop a shared structure for what a proper policy must contain, let one speaker propose a model, and then let another speaker attack its soundness.",
+        keywords: ["problem analysis", "mechanism", "implementation", "red-team", "soundness"]
+      },
+      {
+        format: "Warm-up Motion I",
+        title: "Motion I",
+        motion: "This House Believes That, as Christianity declines among young people, a new alternative religion should be proposed to help believers navigate the world.",
+        desc: "This pushes the room into questions of social need, legitimacy, community-building, and whether institutions can deliberately manufacture meaning without becoming manipulative or hollow.",
+        keywords: ["religion", "meaning", "social cohesion", "legitimacy", "institution design"]
+      },
+      {
+        format: "Warm-up Motion II",
+        title: "Motion II",
+        motion: "This House Believes That declining birth rates should be addressed with government policy.",
+        desc: "A practical policy test case with clashes over demographic decline, labor markets, fiscal sustainability, family autonomy, and whether governments can fix the causes rather than merely the symptoms.",
+        keywords: ["demographics", "family policy", "state intervention", "incentives", "long-term planning"]
+      },
+      {
+        format: "Main Debate",
+        title: "Final Motion",
+        motion: "This House, as the University Senate, Would merge the courses for IT and Management students into one and rewrite the curriculum from scratch.",
+        desc: "The clash sits on the back of a changing tech industry in which programmers write less code and take on more product-owner responsibilities. Teams should defend concrete models for curriculum, governance, and graduate outcomes.",
+        keywords: ["higher education", "curriculum reform", "IT industry", "management", "employability"]
+      }
+    ];
+
+    let currentSlide = 0;
+
+    function renderSlide() {
+      const slide = slides[currentSlide];
+      document.getElementById("formatBadge").textContent = `Format: ${slide.format}`;
+      document.getElementById("slideCounter").textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+      document.getElementById("slideTitle").textContent = slide.title;
+      document.getElementById("motionText").textContent = slide.motion;
+      document.getElementById("motionDesc").textContent = slide.desc;
+
+      const keywords = document.getElementById("keywords");
+      keywords.innerHTML = "";
+      slide.keywords.forEach(word => {
+        const tag = document.createElement("span");
+        tag.className = "keyword";
+        tag.textContent = word;
+        keywords.appendChild(tag);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      renderSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      renderSlide();
+    }
+
+    async function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    }
+
+    let timerInterval = null;
+    let duration = null;
+    let remaining = 0;
+    let stopwatchElapsed = 0;
+    let mode = "stopwatch";
+    let running = false;
+
+    function formatTime(totalSeconds) {
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    }
+
+    function updateTimerUI() {
+      const clock = document.getElementById("clock");
+      const timerMode = document.getElementById("timerMode");
+      const timerStatus = document.getElementById("timerStatus");
+      const progressBar = document.getElementById("progressBar");
+
+      if (mode === "countdown") {
+        clock.textContent = formatTime(remaining);
+        timerMode.textContent = "Countdown mode";
+        if (duration && duration > 0) {
+          const progress = ((duration - remaining) / duration) * 100;
+          progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+        } else {
+          progressBar.style.width = "0%";
+        }
+
+        if (!running && remaining === duration) {
+          timerStatus.textContent = "Countdown armed and waiting.";
+        } else if (!running && remaining > 0) {
+          timerStatus.textContent = "Countdown paused.";
+        } else if (remaining === 0 && !running) {
+          timerStatus.textContent = "Time has expired.";
+        } else {
+          timerStatus.textContent = "The clock is running.";
+        }
+      } else {
+        clock.textContent = formatTime(stopwatchElapsed);
+        timerMode.textContent = "Stopwatch mode";
+        timerStatus.textContent = running ? "The clock is running." : "Ready to sketch the first policy.";
+        progressBar.style.width = "0%";
+      }
+    }
+
+    function tick() {
+      if (mode === "countdown") {
+        if (remaining > 0) {
+          remaining -= 1;
+          updateTimerUI();
+        } else {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          running = false;
+          updateTimerUI();
+          try {
+            const bell = new AudioContext();
+            const oscillator = bell.createOscillator();
+            const gainNode = bell.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(bell.destination);
+            oscillator.type = "sine";
+            oscillator.frequency.value = 880;
+            gainNode.gain.setValueAtTime(0.12, bell.currentTime);
+            oscillator.start();
+            oscillator.stop(bell.currentTime + 0.35);
+          } catch (e) {
+          }
+        }
+      } else {
+        stopwatchElapsed += 1;
+        updateTimerUI();
+      }
+    }
+
+    function clearTimerInterval() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function startTimer() {
+      clearTimerInterval();
+      if (mode === "countdown" && remaining <= 0 && duration) {
+        remaining = duration;
+      }
+      running = true;
+      timerInterval = setInterval(tick, 1000);
+      updateTimerUI();
+    }
+
+    function pauseTimer() {
+      clearTimerInterval();
+      running = false;
+      updateTimerUI();
+    }
+
+    function resumeTimer() {
+      if (running) return;
+      if (mode === "countdown" && remaining <= 0 && duration === 0) return;
+      running = true;
+      clearTimerInterval();
+      timerInterval = setInterval(tick, 1000);
+      updateTimerUI();
+    }
+
+    function resetTimer() {
+      clearTimerInterval();
+      running = false;
+      if (mode === "countdown") {
+        remaining = duration || 0;
+      } else {
+        stopwatchElapsed = 0;
+      }
+      updateTimerUI();
+    }
+
+    function setPreset(seconds) {
+      clearTimerInterval();
+      running = false;
+      mode = "countdown";
+      duration = seconds;
+      remaining = seconds;
+      updateTimerUI();
+    }
+
+    function setStopwatch() {
+      clearTimerInterval();
+      running = false;
+      mode = "stopwatch";
+      duration = null;
+      remaining = 0;
+      stopwatchElapsed = 0;
+      updateTimerUI();
+    }
+
+    function applyCustomMinutes() {
+      const input = document.getElementById("customMinutes");
+      const minutes = Number(input.value);
+      if (!Number.isFinite(minutes) || minutes <= 0) {
+        alert("Please enter a valid number of minutes.");
+        return;
+      }
+      setPreset(Math.round(minutes * 60));
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.target.tagName === "INPUT") return;
+
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      } else if (event.key === "ArrowLeft") {
+        prevSlide();
+      } else if (event.code === "Space") {
+        event.preventDefault();
+        if (running) {
+          pauseTimer();
+        } else {
+          startTimer();
+        }
+      } else if (event.key.toLowerCase() === "r") {
+        resetTimer();
+      }
+    });
+
+    renderSlide();
+    updateTimerUI();
+  </script>
+</body>
+</html>
